@@ -2,11 +2,10 @@ package config
 
 import (
 	"fmt"
-	"insurance-backend/models"
-	"log"
-
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
+	"insurance-backend/models"
+	"log"
 )
 
 func InitDB() *gorm.DB {
