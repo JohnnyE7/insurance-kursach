@@ -1,4 +1,14 @@
-FROM ubuntu:latest
-LABEL authors="johnny"
+FROM golang:1.24.3
 
-ENTRYPOINT ["top", "-b"]
+WORKDIR /app
+
+COPY go.mod go.sum ./
+RUN go mod download
+
+COPY . .
+
+RUN go build -o app .
+
+RUN chmod +x ./init.sh
+
+CMD ["./init.sh"]

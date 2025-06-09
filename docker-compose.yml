@@ -1,4 +1,3 @@
-
 services:
   db:
     image: postgres:14
@@ -25,7 +24,8 @@ services:
       DB_NAME: insurance
     ports:
       - "8080:8080"
-    command: ./app  # если ты собрал в app, можно заменить
+    command: ["./app"]
+
 
 
 volumes:
